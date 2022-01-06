@@ -27,8 +27,9 @@ class Home extends StatefulWidget {
 }
 enum BestTutorSite { vietinbank, vpbank }
 class _HomeState extends State<Home> {
-  final myControllerAmount = TextEditingController();
-  final myControllerContent = TextEditingController();
+  final myControllerAmount = TextEditingController(text: '390000');
+  final myControllerContent = TextEditingController(text: 'VIETQR1003X - 095434504');
+
   FlutterWebviewPlugin flutterWebviewPlugin = FlutterWebviewPlugin();
   BestTutorSite _site = BestTutorSite.vietinbank;
   String url = 'https://sandbox.gateway.vietqr.io/wpg/v1/hao1/hao2?bankId=970419&accountNumber=BANMAI100001&accountName=TRUONG+THCS+BAN+MAI&amount=18500200&description=QST123+.+Nguyen+Hong+Diep+.+5A+.+0973000123+.+Nop+hoc+phi';
@@ -47,13 +48,13 @@ class _HomeState extends State<Home> {
             //log('Người dùng chọn hủy không thanh toán');
             // Tạo view hoặc x
             flutterWebviewPlugin.close();
-            _showAlert('Hủy không thanh toán');
+            _showAlert('Đã bấm nút hủy');
           }
           if (state.contains('pay')) {
-         //   log('Người dùng chọn thanh toán');
             flutterWebviewPlugin.close();
+            _showAlertSuccess("Khách hàng  xác nhận đã bấm nút xác nhận chuyển khoản. Backend của ứng dụng sẽ gọi lên dịch vụ đối soát (vd: Casso) để kiểm tra tình trạng thanh toán đơn hàng và hiển thị kết quả giao dịch tới khách hàng.");
+            // Chèn code gọi lên backend để kiểm tra tình trạng thanh toán.
 
-            _showAlertSuccess("Thời gian tối đa để xác nhận giao dịch chuyển khoản là 1-5p. Quý khách đợi trong giây lát để chúng tôi kiểm tra");
           }
         });
   }
@@ -93,11 +94,11 @@ class _HomeState extends State<Home> {
         title: Text('VietQR Payment Gateway Demo'),
       ),
       drawer: _createDrawer(),
-      body: ListView(
+      body:
+      ListView(
         padding: EdgeInsets.all(20.0),
         children: <Widget>[
-          Center(child: new Image.network(
-            'https://vietqr.net/img/VietQR.46a78cbb.png', width: 200)),
+          Align(alignment: Alignment.centerLeft, child: Text("Tạo mới lệnh thanh toán", style: TextStyle(fontSize: 20))),
 
           Padding(
             padding: EdgeInsets.all(15),
@@ -106,26 +107,11 @@ class _HomeState extends State<Home> {
               controller: myControllerContent,
               decoration: InputDecoration(
                   border: OutlineInputBorder(borderSide: BorderSide(width: 40.0)),
-                  hintText: 'Nội dung'
+                  hintText: 'Nội dung',
+                  labelText: 'Nội dung'
               ),
             ),
           ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           Padding(
             padding: EdgeInsets.all(15),
             child: TextField(
@@ -133,14 +119,18 @@ class _HomeState extends State<Home> {
               controller: myControllerAmount,
               decoration: InputDecoration(
                   border: OutlineInputBorder(borderSide: BorderSide(width: 40.0)),
-                  hintText: 'Số tiền'
+                  hintText: 'Số tiền',
+                  labelText: 'Số tiền'
               ),
             ),
           ),
+          Align(alignment: Alignment.centerLeft, child: Text("Phương thức thanh toán", style: TextStyle(fontSize: 18))),
 
           ListTile(
+
             title: const Text('Chuyển Khoản Vietinbank'),
             leading: Radio(
+
               value: BestTutorSite.vietinbank,
               groupValue: _site,
               onChanged: (BestTutorSite value) {
@@ -149,6 +139,9 @@ class _HomeState extends State<Home> {
                 });
               },
             ),
+            contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
+            0.0),
+            dense:true,
           ),
           ListTile(
             title: const Text('Chuyển Khoản VPBank'),
@@ -161,12 +154,16 @@ class _HomeState extends State<Home> {
                 });
               },
             ),
+            contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal:
+            0.0),
+            dense:true,
           ),
 
-          Center(
+          Align(
+            alignment: Alignment.centerLeft,
             child: RaisedButton.icon(
               icon: Icon(Icons.exit_to_app),
-              label: Text('Xem Demo'),
+              label: Text('Thanh toán'),
               color: Colors.white54,
               onPressed: () => _goToWebView(),
             ),
