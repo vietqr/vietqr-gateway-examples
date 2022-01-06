@@ -110,22 +110,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           Padding(
             padding: EdgeInsets.all(15),
             child: TextField(
