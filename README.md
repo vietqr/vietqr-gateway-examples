@@ -13,9 +13,23 @@ Screenshots :
 Project sử dụng plugin [flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin).
 
 ```
+let customerSlug = "thcs-abc";
+let gatewaySlug = "tuition";
+let gatewayEndpoint = `https://sandbox.gateway.vietqr.io/wpg/v1/${customerSlug}/${gatewaySlug}`;
+
+let paymentInfo = {
+    vietqrTheme : "3dskqdgd", //truy cập my.vietqr.io để tạo theme mới
+    bankId: 974001, // mã BIN => logo, ten ngan hang.
+    accountNumber: "BANMAI100001", //co the la virtual account nubmer
+    accountName : "TRUONG THCS BAN MAI", 
+    amount : 18500200,
+    description : "QST123. Nguyen Hong Diep. Lop 5A . 0973000123 . Nop hoc phi"
+};
+let query = new URLSearchParams(paymentInfo).toString();
+
 Widget buildWebview(){
     return WebviewScaffold(
-        url: "https://sandbox.gateway.vietqr.io/wpg/v1/customer-slug/gateway-slug?bankId=970415&accountNumber=113366668888&accountName=Quy+Vacxin+Covid&amount=18500200&description=Ung+ho+tien+vaccine",
+        url: gatewayEndpoint + "?" + query;
         appBar: new AppBar(
         title: new Text("Widget webview"),
         ),
