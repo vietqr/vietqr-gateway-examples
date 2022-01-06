@@ -24,7 +24,8 @@ final paymentInfo = {
     accountName : "TRUONG THCS BAN MAI", 
     amount : 18500200,
     description : "QST123. Nguyen Hong Diep. Lop 5A . 0973000123 . Nop hoc phi"
-};    
+}; 
+
 Widget buildWebview(){
     return WebviewScaffold(
         url: Uri.https('sandbox.gateway.vietqr.io', '/wpg/v1/${customerSlug}/${gatewaySlug}', paymentInfo),
