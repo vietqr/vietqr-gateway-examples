@@ -15,7 +15,7 @@ Project sử dụng plugin [flutter_webview_plugin](https://pub.dartlang.org/pac
 ```
 Widget buildWebview(){
     return WebviewScaffold(
-        url: "https://sandbox.gateway.vietqr.io/wpg/v1/hao1/hao2?bankId=970419&accountNumber=BANMAI100001&accountName=TRUONG+THCS+BAN+MAI&amount=18500200&description=QST123+.+Nguyen+Hong+Diep+.+5A+.+0973000123+.+Nop+hoc+phi",
+        url: "hhttps://sandbox.gateway.vietqr.io/wpg/v1/hao1/hao2?bankId=970415&accountNumber=113366668888&accountName=Quy+Vacxin+Covid&amount=18500200&description=Ung+ho+tien+vaccine",
         appBar: new AppBar(
         title: new Text("Widget webview"),
         ),
