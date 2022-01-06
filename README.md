@@ -4,9 +4,9 @@ VietQR Payment Gateway Example build using flutter
 
 Screenshots :
 
-![alt text](https://raw.githubusercontent.com/pravodev/flutter-webview-example/master/screenshots/ss1.jpeg "Webview 1")
+![alt text](https://im5.ezgif.com/tmp/ezgif-5-12eaf0219b.gif "Webview 1")
 
-![alt text](https://raw.githubusercontent.com/pravodev/flutter-webview-example/master/screenshots/ss2.jpeg "Webview 2")
+
 
 ## Getting Started
 
