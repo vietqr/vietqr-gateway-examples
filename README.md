@@ -1,6 +1,5 @@
-# VietQR Payment Gateway Demo
+# Demo cổng thanh toán VietQR
 
-VietQR Payment Gateway Example build using flutter
 
 Screenshots :
 
@@ -8,25 +7,15 @@ Screenshots :
 
 
 
-## Getting Started
+## Môi trường
+[Cài môi trường code flutter](https://docs.flutter.dev/get-started/install)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
-
-This project using plugin [flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin).
+Project sử dụng plugin [flutter_webview_plugin](https://pub.dartlang.org/packages/flutter_webview_plugin).
 
 ```
 Widget buildWebview(){
     return WebviewScaffold(
-        url: "https://www.google.com",
+        url: "https://sandbox.gateway.vietqr.io/wpg/v1/hao1/hao2?bankId=970419&accountNumber=BANMAI100001&accountName=TRUONG+THCS+BAN+MAI&amount=18500200&description=QST123+.+Nguyen+Hong+Diep+.+5A+.+0973000123+.+Nop+hoc+phi",
         appBar: new AppBar(
         title: new Text("Widget webview"),
         ),
