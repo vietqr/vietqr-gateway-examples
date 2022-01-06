@@ -4,7 +4,7 @@ VietQR Payment Gateway Example build using flutter
 
 Screenshots :
 
-![alt text](https://im5.ezgif.com/tmp/ezgif-5-12eaf0219b.gif =250x"Webview 1")
+![alt text](https://im5.ezgif.com/tmp/ezgif-5-12eaf0219b.gif "Webview 1")
 
 
 
