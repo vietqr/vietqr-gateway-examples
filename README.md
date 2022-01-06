@@ -3,7 +3,7 @@
 
 Screenshots :
 
-![alt text](https://im5.ezgif.com/tmp/ezgif-5-12eaf0219b.gif "Webview 1")
+![alt text](https://res.cloudinary.com/taskmanagereaglob123/image/upload/v1641463776/ezgif-5-12eaf0219b_1_jgbidx.gif "Webview 1")
 
 
 
